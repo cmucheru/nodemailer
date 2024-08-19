@@ -1,2 +1,2 @@
 # gbnodemailer
-A nodemailer app for globebridgeconsulting.com
+Nodemailer app for globebridgeconsulting.com
