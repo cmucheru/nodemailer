@@ -9,7 +9,7 @@ router.post('/', async (req, res) => {
     let mailOptions = {
         from: 'info@globebridgeconsulting.com',
         to: 'info@globebridgeconsulting.com',
-        subject: 'New Join Submission',
+        subject: 'New Join Us Information',
         text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}`,
         attachments: [
             {
@@ -26,10 +26,10 @@ router.post('/', async (req, res) => {
     // Send email
     try {
         await sendEmail(mailOptions);
-        res.send('Email sent successfully!');
+        res.send('Thankyou. Details sent successfully!');
     } catch (error) {
         console.error(error);
-        res.status(500).send('Failed to send email.');
+        res.status(500).send('Failed to send details.');
     }
 });
 
