@@ -7,9 +7,9 @@ router.post('/', async (req, res) => {
 
     // Compose the email
     let mailOptions = {
-        from: 'support@mycompany.com',
-        to: 'mail@mycompany.com',
-        subject: 'New Contact Form Submission',
+        from: 'visitor@email.com',
+        to: 'info@globebridge.com',
+        subject: 'New Join Submission',
         text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}`,
         attachments: [
             {
