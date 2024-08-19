@@ -1,6 +1,6 @@
 const nodemailer = require('nodemailer');
 
-// Create a transporter using Hostinger SMTP configuration
+// Create a transporter using your SMTP configuration
 const transporter = nodemailer.createTransport({
     host: 'smtp.hostinger.com',
     port: 465,
