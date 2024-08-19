@@ -9,7 +9,7 @@ router.post('/', async (req, res) => {
     let mailOptions = {
         from: 'info@globebridgeconsulting.com',
         to: 'info@globebridgeconsulting.com',
-        subject: 'New Join Us Information',
+        subject: 'New `Join Us` Information',
         text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}`,
         attachments: [
             {
