@@ -14,11 +14,13 @@ router.post('/', async (req, res) => {
         attachments: [
             {
                 filename: req.files['cv'][0].originalname,
-                path: req.files['cv'][0].path
+                path: req.files['cv'][0].path,
+                 contentDisposition: 'attachment; filename="cv.pdf"'
             },
             {
                 filename: req.files['coverLetter'][0].originalname,
-                path: req.files['coverLetter'][0].path
+                path: req.files['coverLetter'][0].path,
+                contentDisposition: 'attachment; filename="coverLetter.pdf"'
             }
         ]
     };
