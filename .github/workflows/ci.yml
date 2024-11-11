@@ -1,0 +1,46 @@
+name: Node.js Server CI
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: Install dependencies
+      run: npm install
+      
+    - name: Start Server and Check
+      run: |
+        nohup npm start &  # Start the server in the background
+        sleep 5            # Wait a few seconds to ensure it starts
+        kill %1            # Kill the background process
+      env:
+        NODE_ENV: production
+
+
+    - name: Run Tests
+      run: npm test  # Ensure you have a test script in your package.json
+
+    - name: Upload Build Artifacts (optional)
+      if: success()
+      uses: actions/upload-artifact@v3
+      with:
+        name: build
+        path: dist  # Adjust if your build artifacts are stored elsewhere
