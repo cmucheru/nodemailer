@@ -9,7 +9,7 @@ const port = process.env.PORT || 5000;
 
 // Use CORS middleware
 app.use(cors({
-    origin: 'https://globebridgeconsulting.com', // Replace with the domain you want to allow
+    origin: 'https://example.com', // Replace with the domain you want to allow
     methods: ['GET', 'POST'],
     allowedHeaders: ['Content-Type']
 }));
