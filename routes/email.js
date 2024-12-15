@@ -8,9 +8,9 @@ router.post('/', async (req, res) => {
 
     // Compose the email
     let mailOptions = {
-        from: 'info@globebridgeconsulting.com',
-        to: 'info@globebridgeconsulting.com',
-        subject: 'Request to Join GlobeBridge Consulting',
+        from: 'info@example.com',
+        to: 'info@example.com',
+        subject: 'Request to join Example inc',
         text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}`,
         attachments: []
     };
